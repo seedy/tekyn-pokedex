@@ -1,0 +1,1 @@
+export const ENDPOINT = "https://beta.pokeapi.co/graphql/v1beta";

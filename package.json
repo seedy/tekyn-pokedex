@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
@@ -34,6 +35,7 @@
     "eslint-config-next": "12.1.5",
     "eslint-plugin-storybook": "^0.5.11",
     "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2",
     "sb": "^6.4.22",
     "typescript": "4.6.4"
   }
