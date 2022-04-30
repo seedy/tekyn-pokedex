@@ -1,0 +1,21 @@
+import details, { Result } from 'lib/queries/pokeapi/details';
+import detailsJson from 'lib/queries/pokeapi/details/details.json';
+
+describe('pokeapi details', () => {
+  it('should not throw', async () => {
+    await expect(details('1')).resolves.not.toThrow();
+  })
+  describe('result', () => {
+    let result: Result;
+    beforeAll(async() => {
+      result = await details('1');
+    })
+
+    it('should not return errors', async () => {
+      expect(result).not.toEqual(expect.objectContaining({errors: expect.any(Array)}))
+    })
+    it('should return details in the expected format', async () => {
+      expect(result.data.pokemon).toEqual(detailsJson)
+    })
+  })
+})

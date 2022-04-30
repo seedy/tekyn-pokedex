@@ -2,7 +2,7 @@ import {ENDPOINT} from 'lib/queries/pokeapi';
 import fetchGQL from "lib/fetchGQL";
 
 const query =  `
-  query pokemon_details($id: Number) {
+  query pokemon_details($id: Int) {
     pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
       id
       name
@@ -19,22 +19,24 @@ const query =  `
         }
       }
       stats: pokemon_v2_pokemonstats {
-        base_stat
-        stat_id
-        pokemon_v2_stat {
+        base: base_stat
+        stat: pokemon_v2_stat {
           name
         }
       }
-      specy: pokemon_v2_pokemonspecy {
-        flavorTexts: pokemon_v2_pokemonspeciesflavortexts(where: {version_id: {_eq: 1}}) {
+      description: pokemon_v2_pokemonspecy {
+        flavorTexts: pokemon_v2_pokemonspeciesflavortexts(where: {_and:[{pokemon_v2_language: {name: {_eq: "en"}}},{flavor_text: {_neq: ""}}]}, limit: 1) {
           flavorText: flavor_text
-          
         }
       }
     }
   }
 `
+export type Result = {
+  data: {
+    pokemon: Pokemon
+  }
+}
+const details = async (id: string): Promise<Result> => fetchGQL(ENDPOINT, {query, variables: {id: Number(id)}, operationName: "pokemon_details"})
 
-const searchByIdQuery = (id: string) => fetchGQL(ENDPOINT, {query, variables: {id: Number(id)}, operationName: "pokemon_details"})
-
-export default searchByIdQuery;
+export default details;

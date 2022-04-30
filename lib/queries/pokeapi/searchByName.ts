@@ -12,6 +12,13 @@ const query =  `
 
 const getNameLike = (name: string): string => name.endsWith('%') ? name : `${name}%`;
 
-const searchByNameQuery = (name: string) => fetchGQL(ENDPOINT, {query, variables: {nameLike: getNameLike(name)}, operationName: "search_pokemon_by_name"})
+
+export type Result = {
+  data: {
+    pokemons: PokemonSearch[]
+  }
+}
+
+const searchByNameQuery = (name: string): Promise<Result> => fetchGQL(ENDPOINT, {query, variables: {nameLike: getNameLike(name)}, operationName: "search_pokemon_by_name"})
 
 export default searchByNameQuery;
