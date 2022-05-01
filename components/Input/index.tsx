@@ -15,6 +15,9 @@ const Input = styled("input", {
   textTransform: "uppercase",
   color: "$loContrast",
   padding: "$1 $3 $2 $3",
+  "&:hover": {
+    outline: "2px solid $hoverOutline",
+  },
   "&:focus-visible": {
     outline: "2px solid $outline",
   },
