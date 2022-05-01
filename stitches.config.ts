@@ -9,4 +9,89 @@ export const {
   theme,
   createTheme,
   config
-} = createStitches();
+} = createStitches({
+  theme: {
+    colors: {
+      // main
+      background: 'linear-gradient(180deg, hsla(27, 87%, 67%, 1) 0%, hsla(224, 37%, 12%, 1) 100%)',
+      primary: 'hsla(27, 87%, 67%, 1)',
+      hiContrast: 'hsla(0, 0%, 0%, 1)',
+      loContrast: 'hsla(197, 37%, 24%, 1)',
+      // types
+      normal: 'hsla(60, 21%, 57%, 1)',
+      fire: 'hsla(23, 84%, 58%, 1)',
+      water: 'hsla(222, 78%, 67%, 1)',
+      grass: 'hsla(101, 50%, 56%, 1)',
+      electrique: 'hsla(47, 92%, 62%, 1)',
+      ice: 'hsla(180, 44%, 73%, 1)',
+      fight: 'hsla(2, 61%, 46%, 1)',
+      poison: 'hsla(301, 35%, 45%, 1)',
+      ground: 'hsla(43, 64%, 65%, 1)',
+      flight: 'hsla(254, 71%, 75%, 1)',
+      psychic: 'hsla(341, 79%, 64%, 1)',
+      bug: 'hsla(67, 57%, 46%, 1)',
+      rock: 'hsla(47, 48%, 49%, 1)',
+      ghost: 'hsla(262, 25%, 47%, 1)',
+      dark: 'hsla(23, 21%, 36%, 1)',
+      dragon: 'hsla(255, 89%, 61%, 1)',
+      steel: 'hsla(237, 19%, 77%, 1)',
+      fairy: 'hsla(354, 64%, 83%, 1)',
+      // stats
+      statActive: 'hsla(197, 65%, 53%, 1)',
+      statInactive: 'hsla(0, 0%, 100%, 1)',
+      statInnerBorder: 'hsla(0, 0%, 87%, 1)',
+      statBackground: 'hsla(0, 0%, 77%, 1)',
+      // infos
+      info: 'hsla(12, 76%, 61%, 1)',
+    },
+    fonts: {
+      roboto: 'Roboto',
+    },
+    fontSizes: {
+      1: '14px',
+      2: '16px',
+      3: '24px',
+      4: '30px',
+    },
+    fontWeights: {
+      bold: 700,
+    },
+    space: {
+      1: '9px',
+      2: '28px',
+      3: '34px',
+      4: '36px',
+      5: '47px',
+      6: '50px',
+      7: '59px',
+    },
+    shadows: {
+      1: '0px 2px 4px hsla(0, 0%, 0%, 0.25)',
+      2: '0px 4px 4px hsla(0, 0%, 0%, 0.25)',
+    },
+    sizes: {
+      1: '12px',
+      2: '56px',
+      3: '60px',
+      4: '65px',
+      5: '80px',
+      6: '100px',
+      7: '150px',
+      8: '208px',
+      9: '215px',
+      10: '249px',
+      11: '265px',
+      12: '280px',
+      13: '290px',
+      14: '344px',
+      15: '346px'
+    },
+    radii: {
+      input: '4px',
+      card: '20px',
+      button: '20px',
+      iconButton: '75px',
+      search: '80px',
+    }
+  }
+});
