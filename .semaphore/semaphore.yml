@@ -13,12 +13,22 @@ blocks:
             - sem-version node 14
             - checkout
             - yarn install
+            - cache store
+  - name: Run unit tests
+    task:
+      prologue:
+        commands:
+          - cache restore
+      jobs:
+        - name: yarn test
+          commands:
             - yarn test:ci
   - name: Build project
     task:
+      prologue:
+        commands:
+          - cache restore
       jobs:
         - name: yarn build
           commands:
-            - sem-version node 14
-            - checkout
             - yarn build
