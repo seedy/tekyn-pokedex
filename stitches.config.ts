@@ -24,6 +24,7 @@ export const {
       card: 'hsla(0, 0%, 100%, 0.8)',
       cardInner: 'hsla(0, 0%, 100%, 1)',
       cardInnerBorder: 'hsla(0, 0%, 87%, 1)',
+      label: 'hsla(0, 0%, 56%, 0.87)',
       // types
       normal: 'hsla(60, 21%, 57%, 1)',
       fire: 'hsla(23, 84%, 58%, 1)',
@@ -52,7 +53,8 @@ export const {
       info: 'hsla(12, 76%, 61%, 1)',
     },
     fonts: {
-      roboto: 'Roboto',
+      roboto: 'Roboto, -apple-system, system-ui, sans-serif',
+      poppins: 'Poppins, -apple-system, system-ui, sans-serif',
     },
     fontSizes: {
       1: '14px',
