@@ -28,7 +28,7 @@ export const Variants: ComponentStory<typeof Button> = (args) => (
   <Grid
     css={{
       flexDirection: "column",
-      gap: "$2",
+      gap: "$3",
       gridTemplateColumns: "repeat(3, 1fr)",
     }}
   >
@@ -57,7 +57,7 @@ export const Types: ComponentStory<typeof Button> = (args) => (
   <Grid
     css={{
       flexDirection: "column",
-      gap: "$2",
+      gap: "$3",
       gridTemplateColumns: "repeat(3, 1fr)",
     }}
   >
