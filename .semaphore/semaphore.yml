@@ -7,17 +7,21 @@ agent:
 blocks:
   - name: Install dependencies
     task:
+      prologue:
+        commands:
+          - sem-version node 14
+          - checkout
       jobs:
         - name: yarn install
           commands:
-            - sem-version node 14
-            - checkout
             - yarn install
             - cache store
   - name: Run unit tests
     task:
       prologue:
         commands:
+          - sem-version node 14
+          - checkout
           - cache restore
       jobs:
         - name: yarn test
@@ -27,6 +31,8 @@ blocks:
     task:
       prologue:
         commands:
+          - sem-version node 14
+          - checkout
           - cache restore
       jobs:
         - name: yarn build
