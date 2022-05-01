@@ -18,6 +18,7 @@ export const {
       hiContrast: 'hsla(0, 0%, 0%, 1)',
       loContrast: 'hsla(197, 37%, 24%, 1)',
       caption: 'hsla(0, 0%, 100%, 1)',
+      hoverOutline: 'hsla(0, 0%, 100%, 0.15)',
       outline: 'hsla(0,0%, 100%, 0.5)',
       hoverBackdrop: 'hsla(0, 0%, 0%, 0.05)',
       backdrop: 'hsla(0, 0%, 0%, 0.15)',
