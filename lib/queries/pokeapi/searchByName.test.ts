@@ -8,7 +8,7 @@ describe('pokeapi searchByName', () => {
     let result: Result;
 
     beforeAll(async () => {
-      result = await searchByNameQuery('charmander');
+      result = await searchByNameQuery('charm', 2);
     });
     it('should not return errors', async () => {
       expect(result).not.toEqual(expect.objectContaining({errors: expect.any(Array)}))
@@ -20,10 +20,17 @@ describe('pokeapi searchByName', () => {
             {
               id: 4,
               name: 'charmander',
-            }
+            },
+            {
+              id: 5,
+              name: 'charmeleon',
+            },
           ]
         }
       }))
     })
-  })
-})
+    it('should return only limit results', async () => {
+      expect(result.data.pokemons).toHaveLength(2);
+    });
+  });
+});
