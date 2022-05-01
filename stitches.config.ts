@@ -89,9 +89,8 @@ export const {
     radii: {
       input: '4px',
       card: '20px',
-      button: '20px',
       iconButton: '75px',
-      search: '80px',
+      button: '80px',
     }
   }
 });
