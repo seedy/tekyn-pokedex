@@ -33,6 +33,7 @@ const makeButtonVariants = () =>
   );
 
 const Button = styled("button", {
+  boxSizing: "border-box",
   position: "relative",
   border: "none",
   borderRadius: "$card",
