@@ -1,0 +1,40 @@
+version: v1.0
+name: Node JS
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Install dependencies
+    task:
+      prologue:
+        commands:
+          - sem-version node 14
+          - checkout
+      jobs:
+        - name: yarn install
+          commands:
+            - yarn install
+            - cache store
+  - name: Run unit tests
+    task:
+      prologue:
+        commands:
+          - sem-version node 14
+          - checkout
+          - cache restore
+      jobs:
+        - name: yarn test
+          commands:
+            - yarn test:ci
+  - name: Build project
+    task:
+      prologue:
+        commands:
+          - sem-version node 14
+          - checkout
+          - cache restore
+      jobs:
+        - name: yarn build
+          commands:
+            - yarn build
