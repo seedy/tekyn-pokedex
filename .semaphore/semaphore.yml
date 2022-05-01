@@ -13,10 +13,12 @@ blocks:
             - sem-version node 14
             - checkout
             - yarn install
-            - 'yarn test:ci'
+            - yarn test:ci
   - name: Build project
     task:
       jobs:
         - name: yarn build
           commands:
+            - sem-version node 14
+            - checkout
             - yarn build
