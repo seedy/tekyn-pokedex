@@ -14,3 +14,9 @@ blocks:
             - checkout
             - yarn install
             - yarn test
+  - name: Build project
+    task:
+      jobs:
+        - name: yarn build
+          commands:
+            - yarn build
