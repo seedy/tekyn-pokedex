@@ -1,5 +1,37 @@
 import { styled } from "stitches.config";
 
+export const VARIANTS = [
+  "normal",
+  "fire",
+  "water",
+  "grass",
+  "electrique",
+  "ice",
+  "fight",
+  "poison",
+  "ground",
+  "flight",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dark",
+  "dragon",
+  "steel",
+  "fairy",
+] as const;
+
+const makeButtonVariants = () =>
+  VARIANTS.reduce(
+    (aggr, variant) => ({
+      ...aggr,
+      [variant]: {
+        background: `$${variant}`,
+      },
+    }),
+    {} as Record<typeof VARIANTS[number], {}>
+  );
+
 const Button = styled("button", {
   borderRadius: "$card",
   background: "$primary",
@@ -7,62 +39,7 @@ const Button = styled("button", {
   height: "$3",
   filter: "drop-shadow($2)",
   variants: {
-    variant: {
-      normal: {
-        background: "$normal",
-      },
-      fire: {
-        background: "$fire",
-      },
-      water: {
-        background: "$water",
-      },
-      grass: {
-        background: "$grass",
-      },
-      electrique: {
-        background: "$electrique",
-      },
-      ice: {
-        background: "$ice",
-      },
-      fight: {
-        background: "$fight",
-      },
-      poison: {
-        background: "$poison",
-      },
-      ground: {
-        background: "$ground",
-      },
-      flight: {
-        background: "$flight",
-      },
-      psychic: {
-        background: "$psychic",
-      },
-      bug: {
-        background: "$bug",
-      },
-      rock: {
-        background: "$rock",
-      },
-      ghost: {
-        background: "$ghost",
-      },
-      dark: {
-        background: "$dark",
-      },
-      dragon: {
-        background: "$dragon",
-      },
-      steel: {
-        background: "$steel",
-      },
-      fairy: {
-        background: "$fairy",
-      },
-    },
+    variant: makeButtonVariants(),
     type: {
       button: {
         borderRadius: "$button",
