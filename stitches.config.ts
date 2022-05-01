@@ -18,6 +18,9 @@ export const {
       hiContrast: 'hsla(0, 0%, 0%, 1)',
       loContrast: 'hsla(197, 37%, 24%, 1)',
       caption: 'hsla(0, 0%, 100%, 1)',
+      outline: 'hsla(0,0%, 100%, 0.5)',
+      hoverBackdrop: 'hsla(0, 0%, 0%, 0.05)',
+      backdrop: 'hsla(0, 0%, 0%, 0.15)',
       // types
       normal: 'hsla(60, 21%, 57%, 1)',
       fire: 'hsla(23, 84%, 58%, 1)',
@@ -57,6 +60,12 @@ export const {
     fontWeights: {
       bold: 700,
     },
+    lineHeights: {
+      1: '16px',
+      2: '19px',
+      3: '28px',
+      4: '35px',
+    },
     space: {
       1: '9px',
       2: '28px',
@@ -79,14 +88,15 @@ export const {
       6: '100px',
       7: '120px',
       8: '150px',
-      9: '208px',
-      10: '215px',
-      11: '249px',
-      12: '265px',
-      13: '280px',
-      14: '290px',
-      15: '344px',
-      16: '346px'
+      9: '156px',
+      10: '208px',
+      11: '215px',
+      12: '249px',
+      13: '265px',
+      14: '280px',
+      15: '290px',
+      16: '344px',
+      17: '346px'
     },
     radii: {
       input: '4px',
