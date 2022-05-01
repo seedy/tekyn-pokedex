@@ -1,9 +1,7 @@
 import React from "react";
 import IconButton from "./index";
-import Image from "next/image";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Grid from "components/Grid";
 import RandomArrow from "components/icons/RandomArrow";
 
 export default {
