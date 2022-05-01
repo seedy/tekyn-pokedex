@@ -21,6 +21,9 @@ export const {
       outline: 'hsla(0,0%, 100%, 0.5)',
       hoverBackdrop: 'hsla(0, 0%, 0%, 0.05)',
       backdrop: 'hsla(0, 0%, 0%, 0.15)',
+      card: 'hsla(0, 0%, 100%, 0.8)',
+      cardInner: 'hsla(0, 0%, 100%, 1)',
+      cardInnerBorder: 'hsla(0, 0%, 87%, 1)',
       // types
       normal: 'hsla(60, 21%, 57%, 1)',
       fire: 'hsla(23, 84%, 58%, 1)',
@@ -96,7 +99,11 @@ export const {
       14: '280px',
       15: '290px',
       16: '344px',
-      17: '346px'
+      17: '346px',
+      18: '403px',
+      19: '414px',
+      20: '800px',
+      21: '1168px',
     },
     radii: {
       input: '4px',
