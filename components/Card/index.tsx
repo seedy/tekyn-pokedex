@@ -23,7 +23,7 @@ const Card = styled("div", {
     variant: {
       inner: {
         background: "$cardInner",
-        border: "1px solid $cardInnerBorder",
+        border: "1px solid $border",
         boxShadow: "$1",
       },
     },
