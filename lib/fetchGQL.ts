@@ -1,7 +1,7 @@
 
 type GQLParams = {
   query: string
-  variables: Record<string, string|number>,
+  variables?: Record<string, string|number>,
   operationName: string
 }
 
