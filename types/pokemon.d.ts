@@ -2,17 +2,38 @@ type Ability = {
   name: string
 }
 
+type Types = "normal"|
+"fire"|
+"water"|
+"grass"|
+"electrique"|
+"ice"|
+"fight"|
+"poison"|
+"ground"|
+"flight"|
+"psychic"|
+"bug"|
+"rock"|
+"ghost"|
+"dark"|
+"dragon"|
+"steel"|
+"fairy"
+
 type Type = {
-  name: string
+  name: Types
 }
+
+type STAT_NAMES = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed'
 
 type Stat = {
   base: number
-  id: number
   stat: {
-    name: string
+    name: STAT_NAMES
   }
 }
+type PokemonStats = Stat[]
 
 type FlavorText = {
   flavorText: string
@@ -22,14 +43,10 @@ type Description = {
   flavorTexts: FlavorText[]
 }
 
-type Pokemon = {
-  id: number
-  name: string
-  height: number
+type PokemonInfos = {
   weight: number
+  height: number
   abilities: Ability[]
-  types: Type[]
-  stats: Stat[]
   description: Description
 }
 
@@ -37,3 +54,15 @@ type PokemonSearch = {
   id: number
   name: string
 }
+
+type Evolutions = {
+  chain: {
+    pokemons: PokemonSearch[]
+  }
+}
+
+type Pokemon = {
+  evolutions: Evolutions
+  types: Type[]
+  stats: PokemonStats
+} & PokemonSearch & PokemonInfos

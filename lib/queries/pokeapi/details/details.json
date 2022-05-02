@@ -2,6 +2,24 @@
   {
     "id": 1,
     "name": "bulbasaur",
+    "evolutions": {
+      "chain":  {
+        "pokemons": [
+          {
+            "id": 1,
+            "name": "bulbasaur"
+          },
+          {
+            "id": 2,
+            "name": "ivysaur"
+          },
+          {
+            "id": 3,
+            "name": "venusaur"
+          }
+        ]
+      }
+    },
     "height": 7,
     "weight": 69,
     "abilities": [
