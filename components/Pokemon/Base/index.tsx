@@ -1,3 +1,4 @@
+import Pokeball from "components/Pokeball";
 import padPokemonId from "lib/pokemon/padPokemonId";
 import Image from "next/image";
 import { ReactNode, useMemo } from "react";
@@ -59,13 +60,7 @@ const PokemonBase = ({
         </AbsoluteWrapper>
         {showPokeball && (
           <AbsoluteWrapper>
-            <Image
-              src="/pokemon/pokeball.png"
-              width={100}
-              height={100}
-              alt="pokeball"
-              unoptimized={unoptimized}
-            />
+            <Pokeball unoptimized={unoptimized} />
           </AbsoluteWrapper>
         )}
       </ImagesBlock>
