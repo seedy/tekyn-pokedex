@@ -5,6 +5,7 @@ import { useMemo } from "react";
 interface TypesProps {
   variant?: "simple" | "double";
   types:
+    | Types[]
     | [typeof VARIANTS[number]]
     | [typeof VARIANTS[number], typeof VARIANTS[number]];
 }

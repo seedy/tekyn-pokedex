@@ -22,7 +22,7 @@ export const VARIANTS = [
   "dragon",
   "steel",
   "fairy",
-] as const;
+] as Types[];
 
 const makeButtonVariants = () =>
   VARIANTS.reduce(

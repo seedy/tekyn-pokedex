@@ -2,8 +2,27 @@ type Ability = {
   name: string
 }
 
+type Types = "normal"|
+"fire"|
+"water"|
+"grass"|
+"electrique"|
+"ice"|
+"fight"|
+"poison"|
+"ground"|
+"flight"|
+"psychic"|
+"bug"|
+"rock"|
+"ghost"|
+"dark"|
+"dragon"|
+"steel"|
+"fairy"
+
 type Type = {
-  name: string
+  name: Types
 }
 
 type STAT_NAMES = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed'
