@@ -13,6 +13,7 @@ type Stat = {
     name: string
   }
 }
+type PokemonStats = Stat[]
 
 type FlavorText = {
   flavorText: string
@@ -22,16 +23,20 @@ type Description = {
   flavorTexts: FlavorText[]
 }
 
+type PokemonInfos = {
+  weight: number
+  height: number
+  abilities: Ability[]
+  description: Description
+}
+
+
 type Pokemon = {
   id: number
   name: string
-  height: number
-  weight: number
-  abilities: Ability[]
   types: Type[]
-  stats: Stat[]
-  description: Description
-}
+  stats: PokemonStats
+} & PokemonInfos
 
 type PokemonSearch = {
   id: number
