@@ -15,8 +15,8 @@ const Pokemon = ({ id, name, ...props }: PokemonProps) => {
 
   return (
     <PokemonBase id={id} name={capitalizedName} showPokeball {...props}>
-      <Flex>
-        <H2 align="center">
+      <Flex css={{ justifyContent: "center" }}>
+        <H2 align="center" css={{ position: "absolute" }}>
           {pokedexId}
           <br />
           {capitalizedName}
