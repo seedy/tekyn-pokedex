@@ -1,8 +1,11 @@
 import { styled } from "stitches.config";
 
+export const FIRE = "fire";
+export const FLIGHT = "flight";
+
 export const VARIANTS = [
   "normal",
-  "fire",
+  FIRE,
   "water",
   "grass",
   "electrique",
@@ -10,7 +13,7 @@ export const VARIANTS = [
   "fight",
   "poison",
   "ground",
-  "flight",
+  FLIGHT,
   "psychic",
   "bug",
   "rock",
