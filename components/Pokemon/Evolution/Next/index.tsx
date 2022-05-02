@@ -9,6 +9,7 @@ const Root = styled("div", {
 });
 
 const ArrowWrapper = styled("div", {
+  color: "inherit",
   position: "absolute",
   top: "10%",
   bottom: "10%",
@@ -26,13 +27,15 @@ const ArrowWrapper = styled("div", {
   },
 });
 
-const PokemonEvolutionNext = (props: ComponentProps<typeof EvolutionArrow>) => (
-  <Root>
+const PokemonEvolutionNext = ({
+  fill,
+}: ComponentProps<typeof EvolutionArrow>) => (
+  <Root css={{ color: fill }}>
     <ArrowWrapper variant="left">
-      <EvolutionArrow {...props} />
+      <EvolutionArrow fill="currentColor" />
     </ArrowWrapper>
     <ArrowWrapper variant="right">
-      <EvolutionArrow {...props} />
+      <EvolutionArrow fill="currentColor" />
     </ArrowWrapper>
   </Root>
 );
