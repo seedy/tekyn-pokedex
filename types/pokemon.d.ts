@@ -50,15 +50,21 @@ type PokemonInfos = {
   description: Description
 }
 
-
-type Pokemon = {
-  id: number
-  name: string
-  types: Type[]
-  stats: PokemonStats
-} & PokemonInfos
-
 type PokemonSearch = {
   id: number
   name: string
 }
+
+type Evolutions = {
+  chain: {
+    pokemons: PokemonSearch[]
+  }
+}
+
+type Pokemon = {
+  id: number
+  name: string
+  evolutions: Evolutions
+  types: Type[]
+  stats: PokemonStats
+} & PokemonInfos

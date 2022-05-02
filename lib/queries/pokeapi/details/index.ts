@@ -6,6 +6,14 @@ const query =  `
     pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
       id
       name
+      evolutions: pokemon_v2_pokemonspecy {
+        chain: pokemon_v2_evolutionchain {
+          pokemons: pokemon_v2_pokemonspecies{
+            id
+            name
+          }
+        }
+      }
       height
       weight
       abilities: pokemon_v2_pokemonabilities {
