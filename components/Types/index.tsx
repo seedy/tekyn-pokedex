@@ -13,7 +13,7 @@ const Types = ({ variant = "simple", types }: TypesProps) => {
   const doubleType = useMemo(() => types?.[1], [types]);
 
   return (
-    <Flex css={{ gap: "$7" }}>
+    <Flex css={{ gap: "$12" }}>
       <Button variant={simpleType}>{simpleType}</Button>
       {variant === "double" && (
         <Button variant={doubleType}>{doubleType}</Button>

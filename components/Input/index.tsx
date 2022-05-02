@@ -14,7 +14,7 @@ const Input = styled("input", {
   alignItems: "center",
   textTransform: "uppercase",
   color: "$loContrast",
-  padding: "$1 $3 $2 $3",
+  padding: "$2 $4 $3 $4",
   "&:hover": {
     outline: "2px solid $hoverOutline",
   },
