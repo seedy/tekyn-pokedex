@@ -49,7 +49,6 @@ export const {
       // stats
       statActive: 'hsla(197, 65%, 53%, 1)',
       statInactive: 'hsla(0, 0%, 100%, 1)',
-      statInnerBorder: 'hsla(0, 0%, 87%, 1)',
       statBackground: 'hsla(0, 0%, 77%, 1)',
       // infos
       info: 'hsla(12, 76%, 61%, 1)',
