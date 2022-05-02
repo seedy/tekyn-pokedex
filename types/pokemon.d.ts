@@ -62,9 +62,7 @@ type Evolutions = {
 }
 
 type Pokemon = {
-  id: number
-  name: string
   evolutions: Evolutions
   types: Type[]
   stats: PokemonStats
-} & PokemonInfos
+} & PokemonSearch & PokemonInfos
