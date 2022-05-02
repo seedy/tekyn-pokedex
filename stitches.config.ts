@@ -128,6 +128,9 @@ export const {
       card: '20px',
       iconButton: '75px',
       button: '80px',
+    },
+    zIndices: {
+      foreFront: 1,
     }
   }
 });
