@@ -6,11 +6,12 @@ type Type = {
   name: string
 }
 
+type STAT_NAMES = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed'
+
 type Stat = {
   base: number
-  id: number
   stat: {
-    name: string
+    name: STAT_NAMES
   }
 }
 type PokemonStats = Stat[]
