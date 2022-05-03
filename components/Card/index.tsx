@@ -18,11 +18,11 @@ const Card = styled("div", {
         padding: "$22 $20 $22 $21",
       },
       large: {
-        width: "$20",
         height: "$21",
         padding: "$14 $16 $15 $15",
         maxWidth: "80vw",
         maxHeight: "80vh",
+        aspectRatio: 1.46,
       },
     },
     variant: {
