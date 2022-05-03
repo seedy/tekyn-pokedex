@@ -16,7 +16,7 @@ export const Default = Template.bind({});
 Default.args = {
   id: 6,
   name: "charizard",
-  types: [{ name: "fire" }, { name: "flight" }],
+  types: [{ type: { name: "fire" } }, { type: { name: "flight" } }],
   unoptimized: true,
 };
 Default.argTypes = {
@@ -31,7 +31,7 @@ export const Other = Template.bind({});
 Other.args = {
   id: 96,
   name: "drowzee",
-  types: [{ name: "psychic" }],
+  types: [{ type: { name: "psychic" } }],
   unoptimized: true,
 };
 Other.argTypes = {
