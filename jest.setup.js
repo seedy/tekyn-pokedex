@@ -7,8 +7,10 @@ import '@testing-library/jest-dom/extend-expect'
 import {server} from './mocks/server';
 
 // MSW starts mock server
-beforeAll(() => server.listen())
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  beforeAll(() => server.listen())
 
-afterEach(() => server.resetHandlers())
-
-afterAll(() => server.close())
+  afterEach(() => server.resetHandlers())
+  
+  afterAll(() => server.close())
+}
