@@ -28,8 +28,7 @@ const PokemonMain = ({
     () => (types.length > 1 ? "double" : "simple"),
     [types]
   );
-
-  const typeValues = useMemo(() => types.map(({ name }) => name), [types]);
+  const typeValues = useMemo(() => types.map(({ type }) => type.name), [types]);
   return (
     <Wrapper>
       <Image
