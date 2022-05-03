@@ -1,0 +1,101 @@
+{
+  "1": {
+    "data": {
+      "pokemons": [
+        {
+          "id": 1,
+          "name": "bulbasaur",
+          "evolutions": {
+            "chain": {
+              "pokemons": [
+                {
+                  "id": 1,
+                  "name": "bulbasaur"
+                },
+                {
+                  "id": 2,
+                  "name": "ivysaur"
+                },
+                {
+                  "id": 3,
+                  "name": "venusaur"
+                }
+              ]
+            }
+          },
+          "height": 7,
+          "weight": 69,
+          "abilities": [
+            {
+              "ability": {
+                "name": "chlorophyll"
+              }
+            },
+            {
+              "ability": {
+                "name": "overgrow"
+              }
+            }
+          ],
+          "types": [
+            {
+              "type": {
+                "name": "grass"
+              }
+            },
+            {
+              "type": {
+                "name": "poison"
+              }
+            }
+          ],
+          "stats": [
+            {
+              "base": 45,
+              "stat": {
+                "name": "hp"
+              }
+            },
+            {
+              "base": 49,
+              "stat": {
+                "name": "attack"
+              }
+            },
+            {
+              "base": 49,
+              "stat": {
+                "name": "defense"
+              }
+            },
+            {
+              "base": 65,
+              "stat": {
+                "name": "special-attack"
+              }
+            },
+            {
+              "base": 65,
+              "stat": {
+                "name": "special-defense"
+              }
+            },
+            {
+              "base": 45,
+              "stat": {
+                "name": "speed"
+              }
+            }
+          ],
+          "description": {
+            "flavorTexts": [
+              {
+                "flavorText": "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
