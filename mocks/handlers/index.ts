@@ -1,6 +1,6 @@
 import {rest} from 'msw';
 import { ENDPOINT } from 'lib/queries/pokeapi';
-import getPokemonIdsHandler from 'mocks/handlers/getPokemonIds';
+import getPokemonIdsNamesHandler from 'mocks/handlers/getPokemonIdsNames';
 import searchByIdHandler from 'mocks/handlers/searchById';
 import searchByNameHandler from 'mocks/handlers/searchByName';
 import pokemonDetailshandler from 'mocks/handlers/details';
@@ -16,8 +16,8 @@ export const handlers = [
       case 'search_pokemon_by_id': {
         return searchByIdHandler(req, res, ctx);
       }
-      case 'get_pokemon_ids': {
-        return getPokemonIdsHandler(req, res, ctx);
+      case 'get_pokemon_ids_names': {
+        return getPokemonIdsNamesHandler(req, res, ctx);
       }
       case 'pokemon_details': {
         return pokemonDetailshandler(req, res, ctx);

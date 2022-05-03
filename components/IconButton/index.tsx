@@ -6,7 +6,7 @@ const IconButton = forwardRef<
   ElementRef<typeof Button>,
   VariantProps<typeof Button> & ComponentProps<typeof Button>
 >((props, forwardedRef) => (
-  <Button ref={forwardedRef} type="iconButton" {...props} />
+  <Button ref={forwardedRef} buttonType="iconButton" {...props} />
 ));
 IconButton.displayName = "IconButton";
 

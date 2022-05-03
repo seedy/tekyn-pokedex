@@ -4,10 +4,12 @@ import { useCombobox, UseComboboxStateChange } from "downshift";
 import { ComponentProps, useId, useMemo, useState } from "react";
 import Label from "components/Label";
 import Input from "components/Input";
+import filterOptions from "lib/filterOptions";
 
 interface AutocompleteProps extends ComponentProps<typeof Input> {
   options: string[];
   label: string;
+  onInputValueChange: (changes: UseComboboxStateChange<string>) => void;
   onSelectedItemChange?: (changes: UseComboboxStateChange<string>) => void;
 }
 
@@ -30,6 +32,7 @@ const ListBox = styled("ul", {
   lineHeight: "$3",
   maxHeight: "$10",
   textTransform: "uppercase",
+  overflow: "auto",
   "&:not(:empty)": {
     boxShadow: "$1",
     border: "1px solid $border",
@@ -54,12 +57,12 @@ const Autocomplete = ({
   options,
   id,
   onSelectedItemChange,
+  onInputValueChange,
   ...props
 }: AutocompleteProps) => {
   const generatedId = useId();
   const idOrGenerated = useMemo(() => id || generatedId, [id, generatedId]);
 
-  const [inputItems, setInputItems] = useState(options);
   const {
     isOpen,
     getLabelProps,
@@ -69,15 +72,9 @@ const Autocomplete = ({
     highlightedIndex,
     getItemProps,
   } = useCombobox({
-    items: inputItems,
-    onSelectedItemChange: onSelectedItemChange,
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(
-        options.filter((option) =>
-          option.toLowerCase().startsWith(inputValue?.toLowerCase() || "")
-        )
-      );
-    },
+    items: options,
+    onSelectedItemChange,
+    onInputValueChange,
   });
 
   return (
@@ -97,7 +94,7 @@ const Autocomplete = ({
       </ComboBox>
       <ListBox {...getMenuProps()}>
         {isOpen &&
-          inputItems.map((item, index) => (
+          options.map((item, index) => (
             <ListItem
               active={highlightedIndex === index}
               key={`${item}${index}`}

@@ -42,12 +42,12 @@ export const Variants: ComponentStory<typeof Button> = (args) => (
 
 export const Type = Template.bind({});
 Type.args = {
-  type: "button",
-  children: "type",
+  buttonType: "button",
+  children: "buttonType",
 };
 
 Type.argTypes = {
-  type: {
+  buttonType: {
     control: "inline-radio",
     options: ["button", "iconButton", "undefined"],
   },
@@ -62,7 +62,7 @@ export const Types: ComponentStory<typeof Button> = (args) => (
     }}
   >
     <Button>default</Button>
-    <Button type="button">button</Button>
-    <Button type="iconButton">IB</Button>
+    <Button buttonType="button">button</Button>
+    <Button buttonType="iconButton">IB</Button>
   </Grid>
 );
