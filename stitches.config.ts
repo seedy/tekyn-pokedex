@@ -52,6 +52,9 @@ export const {
       statBackground: 'hsla(0, 0%, 77%, 1)',
       // infos
       info: 'hsla(12, 76%, 61%, 1)',
+      // evolutions
+      evolutionSimple: 'hsla(43, 74%, 66%, 1)',
+      evolutionDouble: 'hsla(27, 87%, 67%, 1)'
     },
     fonts: {
       roboto: 'Roboto, -apple-system, system-ui, sans-serif',
