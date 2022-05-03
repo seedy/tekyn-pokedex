@@ -72,7 +72,7 @@ const Button = styled("button", {
   },
   variants: {
     variant: makeButtonVariants(),
-    type: {
+    buttonType: {
       button: {
         width: "$9",
         height: "$4",
