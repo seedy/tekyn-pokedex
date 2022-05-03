@@ -1,37 +1,63 @@
 import Card from "components/Card";
 import Pokeball from "components/Pokeball";
 import Flex from "components/Flex";
-import TextFieldSearch from "components/TextField/Search";
 import Button from "components/Button";
 import IconButtonRandom from "components/IconButton/Random";
-import { useCallback, FormEventHandler, ChangeEventHandler } from "react";
+import { useCallback, FormEventHandler, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import searchByIdQuery from "lib/queries/pokeapi/searchById";
-import searchByNameQuery from "lib/queries/pokeapi/searchByName";
+import Autocomplete from "components/Autocomplete";
+import padPokemonId from "lib/pokemon/padPokemonId";
+import { UseComboboxStateChange } from "downshift";
+import filterOptions from "lib/filterOptions";
+import unpadPokemonId from "lib/pokemon/unpadPokemonId";
 
+const NUMBER_REGEX = /^\d+$/;
 interface SearchRouteProps {
-  pokemonIds: string[];
+  pokemonIdsNames: { id: number; name: string }[];
 }
-const SearchRoute = ({ pokemonIds }: SearchRouteProps) => {
+const SearchRoute = ({ pokemonIdsNames }: SearchRouteProps) => {
   const { push } = useRouter();
+  const [options, setOptions] = useState<string[]>([]);
 
-  const onChange: ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
-    const searchText = e.target.value;
-    if (Number.isNaN(searchText)) {
-      searchByNameQuery(searchText);
-    } else {
-      searchByIdQuery(searchText);
-    }
-  }, []);
+  const pokemonIds = useMemo(
+    () => pokemonIdsNames.map(({ id }) => id),
+    [pokemonIdsNames]
+  );
+  const paddedPokemonIds = useMemo(
+    () => pokemonIds.map(padPokemonId),
+    [pokemonIds]
+  );
+  const pokemonNames = useMemo(
+    () => pokemonIdsNames.map(({ name }) => name),
+    [pokemonIdsNames]
+  );
+
+  const onInputValueChange = useCallback(
+    ({ inputValue }: UseComboboxStateChange<string>) => {
+      const trimmedValue = inputValue?.trim() || "";
+      if (NUMBER_REGEX.test(trimmedValue)) {
+        setOptions(filterOptions(trimmedValue, paddedPokemonIds));
+      } else {
+        setOptions(filterOptions(trimmedValue, pokemonNames));
+      }
+    },
+    [setOptions, paddedPokemonIds, pokemonNames]
+  );
 
   const onSubmit: FormEventHandler<HTMLFormElement> = useCallback(
     (e) => {
       e.preventDefault();
       const { search } = e.target as any;
-      const id = search.value as string;
-      push(id);
+      const searchValue = search.value as string;
+      const pokemonIdName = pokemonIdsNames.find(
+        ({ id, name }) =>
+          id === Number(unpadPokemonId(searchValue)) || name === searchValue
+      );
+      if (pokemonIdName) {
+        push(`/${pokemonIdName.id}`);
+      }
     },
-    [push]
+    [push, pokemonIdsNames]
   );
 
   return (
@@ -42,10 +68,12 @@ const SearchRoute = ({ pokemonIds }: SearchRouteProps) => {
           <Flex
             css={{ flexDirection: "column", margin: "$11 0", width: "100%" }}
           >
-            <TextFieldSearch
+            <Autocomplete
               name="search"
+              type="search"
               label="Pokemon name or id"
-              onChange={onChange}
+              options={options}
+              onInputValueChange={onInputValueChange}
             />
           </Flex>
           <Flex css={{ justifyContent: "space-between", width: "100%" }}>
