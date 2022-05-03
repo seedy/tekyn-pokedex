@@ -4,10 +4,12 @@ import { useCombobox, UseComboboxStateChange } from "downshift";
 import { ComponentProps, useId, useMemo, useState } from "react";
 import Label from "components/Label";
 import Input from "components/Input";
+import filterOptions from "lib/filterOptions";
 
 interface AutocompleteProps extends ComponentProps<typeof Input> {
   options: string[];
   label: string;
+  onInputValueChange?: (changes: UseComboboxStateChange<string>) => void;
   onSelectedItemChange?: (changes: UseComboboxStateChange<string>) => void;
 }
 
@@ -54,6 +56,7 @@ const Autocomplete = ({
   options,
   id,
   onSelectedItemChange,
+  onInputValueChange,
   ...props
 }: AutocompleteProps) => {
   const generatedId = useId();
@@ -71,12 +74,13 @@ const Autocomplete = ({
   } = useCombobox({
     items: inputItems,
     onSelectedItemChange: onSelectedItemChange,
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(
-        options.filter((option) =>
-          option.toLowerCase().startsWith(inputValue?.toLowerCase() || "")
-        )
-      );
+    onInputValueChange: (props) => {
+      if (onInputValueChange) {
+        onInputValueChange(props);
+      } else {
+        const { inputValue } = props;
+        setInputItems(filterOptions(inputValue, options));
+      }
     },
   });
 
