@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tekyn Pokedex Challenge
 
-## Getting Started
+Welcome, here are the instructions to review the challenge
 
-First, run the development server:
+## Running locally
+
+### Getting Started
+
+First, install dependencies (Note: [yarn](https://yarnpkg.com/) is this project's dependency manager):
+
+```bash
+yarn
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +22,50 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To build the project, run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn build
+```
 
-## Learn More
+Then, to serve the application from the built artifacts, run:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Test
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run unit and integration tests, run the following command:
 
-## Deploy on Vercel
+```bash
+yarn test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Storybook
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To launch the storybook locally, run the following command:
+
+```bash
+yarn storybook
+```
+
+## Watching Remotely
+
+### Deployment on Vercel
+
+You can find the latest deployment of the application on Vercel:
+
+[Tekyn Pokedex](https://tekyn-pokedex-seedy.vercel.app/)
+
+### CI
+
+There is a SemaphoreCI running on the [repository](https://github.com/seedy/tekyn-pokedex)
+
+### Storybook on github pages
+
+The project's storybook was deployed with latest documentation of the components on Github Pages:
+
+[Tekyn Pokedex - Storybook](https://seedy.github.io/tekyn-pokedex)

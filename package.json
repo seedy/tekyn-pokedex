@@ -1,5 +1,6 @@
 {
   "name": "tekyn-pokedex",
+  "homepage": "https://seedy.github.io/tekyn-pokedex",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "test": "jest --watch",
     "test:ci": "jest --ci --silent"
   },
@@ -26,6 +27,7 @@
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
+    "@storybook/storybook-deployer": "^2.8.11",
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "^0.0.11",
     "@testing-library/jest-dom": "^5.16.4",
