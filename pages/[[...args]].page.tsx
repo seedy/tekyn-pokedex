@@ -3,14 +3,20 @@ import type {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Suspense } from "react";
 import Head from "next/head";
 import getPokemonIdsNamesQuery from "lib/queries/pokeapi/getPokemonIdsNames";
 import Layout from "components/Layout";
 import SearchRoute from "pages/routes/search";
-import DetailsRoute from "pages/routes/details";
 import Route from "components/Route";
 import { globalCss } from "stitches.config";
 import details from "lib/queries/pokeapi/details";
+import dynamic from "next/dynamic";
+import { Skeleton } from "pages/routes/details";
+
+const DetailsRoute = dynamic(() => import("pages/routes/details"), {
+  suspense: true,
+});
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const pokemonId = Array.isArray(params?.args)
@@ -57,7 +63,9 @@ const Home: NextPage = ({
           <SearchRoute pokemonIdsNames={pokemonIdsNames} />
         </Route>
         <Route href="!/">
-          <DetailsRoute pokemons={pokemons} />
+          <Suspense fallback={<Skeleton />}>
+            <DetailsRoute pokemons={pokemons} />
+          </Suspense>
         </Route>
       </Layout>
     </div>

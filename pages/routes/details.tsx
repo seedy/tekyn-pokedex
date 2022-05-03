@@ -11,6 +11,8 @@ import capitalizePokemonName from "lib/pokemon/capitalizePokemonName";
 import padPokemonId from "lib/pokemon/padPokemonId";
 import { useMemo } from "react";
 
+export const Skeleton = () => <Card size="large" />;
+
 interface DetailsRouteProps {
   pokemons: Pokemon[];
 }
