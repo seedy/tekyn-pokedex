@@ -9,7 +9,7 @@ const Card = styled("div", {
     size: {
       small: {
         width: "$15",
-        height: "$13",
+        minHeight: "$13",
         padding: "$8 $6 $7 $6",
       },
       medium: {
