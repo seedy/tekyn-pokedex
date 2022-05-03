@@ -1,8 +1,6 @@
 import Pokemon from "components/Pokemon";
-import EvolutionArrow from "components/icons/EvolutionArrow";
 import { useMemo } from "react";
 import Flex from "components/Flex";
-import { styled } from "stitches.config";
 import PokemonEvolutionNext from "components/Pokemon/Evolution/Next";
 
 interface EvolutionProps {
