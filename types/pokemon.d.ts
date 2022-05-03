@@ -22,7 +22,9 @@ type Types = "normal"|
 "fairy"
 
 type Type = {
-  name: Types
+  type: {
+    name: Types
+  }
 }
 
 type STAT_NAMES = 'hp' | 'attack' | 'defense' | 'special-attack' | 'special-defense' | 'speed'

@@ -9,7 +9,7 @@ const Card = styled("div", {
     size: {
       small: {
         width: "$15",
-        height: "$13",
+        minHeight: "$13",
         padding: "$8 $6 $7 $6",
       },
       medium: {
@@ -18,9 +18,11 @@ const Card = styled("div", {
         padding: "$22 $20 $22 $21",
       },
       large: {
-        width: "$20",
         height: "$21",
         padding: "$14 $16 $15 $15",
+        maxWidth: "80vw",
+        maxHeight: "80vh",
+        aspectRatio: 1.46,
       },
     },
     variant: {

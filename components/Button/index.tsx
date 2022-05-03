@@ -84,6 +84,7 @@ const Button = styled("button", {
         height: "$4",
         borderRadius: "$iconButton",
         filter: "none",
+        lineHeight: 0,
       },
     },
   },
