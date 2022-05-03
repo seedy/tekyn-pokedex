@@ -6,7 +6,7 @@ Welcome, here are the instructions to review the challenge
 
 ### Getting Started
 
-First, install dependencies:
+First, install dependencies (Note: [yarn](https://yarnpkg.com/) is this project's dependency manager):
 
 ```bash
 yarn
@@ -58,11 +58,14 @@ yarn storybook
 
 You can find the latest deployment of the application on Vercel:
 
+[Tekyn Pokedex](https://tekyn-pokedex-seedy.vercel.app/)
 
 ### CI
 
-There is a SemaphoreCI running on each PR on the [repository](https://github.com/seedy/tekyn-pokedex)
+There is a SemaphoreCI running on the [repository](https://github.com/seedy/tekyn-pokedex)
 
 ### Storybook on github pages
 
-https://seedy.github.io/tekyn-pokedex
+The project's storybook was deployed with latest documentation of the components on Github Pages:
+
+[Tekyn Pokedex - Storybook](https://seedy.github.io/tekyn-pokedex)
