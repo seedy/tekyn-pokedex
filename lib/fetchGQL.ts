@@ -1,5 +1,5 @@
 
-type GQLParams = {
+export type GQLParams = {
   query: string
   variables?: Record<string, string|number>,
   operationName: string
