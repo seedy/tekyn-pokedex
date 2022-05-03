@@ -8,7 +8,10 @@ interface RouteProps {
 const Route = ({ href, children }: RouteProps) => {
   const { asPath } = useRouter();
 
-  const matches = useMemo(() => asPath === href, [asPath, href]);
+  const matches = useMemo(
+    () => (href.startsWith("!") ? asPath !== href.slice(1) : asPath === href),
+    [asPath, href]
+  );
 
   if (matches) {
     return <>{children}</>;

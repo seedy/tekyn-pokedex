@@ -9,25 +9,50 @@ describe("Route", () => {
   beforeEach(() => {
     mockRouter.setCurrentUrl("/");
   });
-  it("should render nothing", async () => {
-    const { queryByText } = render(<Route href="/pokemon">content</Route>);
+  describe("exact href matching", () => {
+    it("should render nothing", async () => {
+      const { queryByText } = render(<Route href="/pokemon">content</Route>);
 
-    expect(queryByText("content")).not.toBeInTheDocument();
-  });
-  it("should render content when already matching url", async () => {
-    mockRouter.setCurrentUrl("/pokemon");
-
-    const { queryByText } = render(<Route href="/pokemon">content</Route>);
-
-    expect(queryByText("content")).toBeInTheDocument();
-  });
-  it("should update and render content after navigation occurs", async () => {
-    const { queryByText } = render(<Route href="/pokemon">content</Route>);
-
-    act(() => {
-      singletonRouter.push("/pokemon");
+      expect(queryByText("content")).not.toBeInTheDocument();
     });
+    it("should render content when already matching url", async () => {
+      mockRouter.setCurrentUrl("/pokemon");
 
-    expect(queryByText("content")).toBeInTheDocument();
+      const { queryByText } = render(<Route href="/pokemon">content</Route>);
+
+      expect(queryByText("content")).toBeInTheDocument();
+    });
+    it("should update and render content after navigation occurs", async () => {
+      const { queryByText } = render(<Route href="/pokemon">content</Route>);
+
+      act(() => {
+        singletonRouter.push("/pokemon");
+      });
+
+      expect(queryByText("content")).toBeInTheDocument();
+    });
+  });
+  describe("reverse href matching", () => {
+    it("should render nothing", async () => {
+      const { queryByText } = render(<Route href="!/">content</Route>);
+
+      expect(queryByText("content")).not.toBeInTheDocument();
+    });
+    it("should render content when already matching url", async () => {
+      mockRouter.setCurrentUrl("/pokemon");
+
+      const { queryByText } = render(<Route href="!/">content</Route>);
+
+      expect(queryByText("content")).toBeInTheDocument();
+    });
+    it("should update and render content after navigation occurs", async () => {
+      const { queryByText } = render(<Route href="!/">content</Route>);
+
+      act(() => {
+        singletonRouter.push("/pokemon");
+      });
+
+      expect(queryByText("content")).toBeInTheDocument();
+    });
   });
 });
