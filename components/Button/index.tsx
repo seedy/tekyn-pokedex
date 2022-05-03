@@ -41,6 +41,7 @@ const Button = styled("button", {
   border: "none",
   borderRadius: "$card",
   background: "$primary",
+  color: "$caption",
   width: "$7",
   height: "$3",
   filter: "drop-shadow($shadows$2)",
