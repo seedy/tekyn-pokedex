@@ -7,7 +7,6 @@ interface RouteProps {
 }
 const Route = ({ href, children }: RouteProps) => {
   const { asPath } = useRouter();
-  console.log(href, asPath);
 
   const matches = useMemo(() => asPath === href, [asPath, href]);
 
