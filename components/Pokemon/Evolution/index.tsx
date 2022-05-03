@@ -1,5 +1,5 @@
 import Pokemon from "components/Pokemon";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import Flex from "components/Flex";
 import PokemonEvolutionNext from "components/Pokemon/Evolution/Next";
 
@@ -22,14 +22,14 @@ const Evolution = ({ evolutions, unoptimized }: EvolutionProps) => {
   return (
     <Flex css={{ alignItems: "center" }}>
       {evolutionMap.map(({ name, id }, index, array) => (
-        <>
-          <Pokemon key={id} id={id} name={name} unoptimized={unoptimized} />
+        <Fragment key={id}>
+          <Pokemon id={id} name={name} unoptimized={unoptimized} />
           {index !== array.length - 1 && (
             <PokemonEvolutionNext
               fill={isSimpleEvolution ? "$evolutionSimple" : "$evolutionDouble"}
             />
           )}
-        </>
+        </Fragment>
       ))}
     </Flex>
   );
