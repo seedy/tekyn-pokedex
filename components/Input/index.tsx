@@ -21,6 +21,11 @@ const Input = styled("input", {
   "&:focus-visible": {
     outline: "2px solid $outline",
   },
+  '&[type="search"]': {
+    "&::-webkit-search-decoration,&::-webkit-search-cancel-button": {
+      "-webkit-appearance": "none",
+    },
+  },
 });
 
 export default Input;
