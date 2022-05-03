@@ -1,5 +1,5 @@
 const filterOptions = (value = '', options: string[]) => options.filter((option) =>
-  option.toLowerCase().startsWith(value?.toLowerCase() || "")
+  option.toLowerCase().includes(value?.toLowerCase() || "")
 )
 
 export default filterOptions
