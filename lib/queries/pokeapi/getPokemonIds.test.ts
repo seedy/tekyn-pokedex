@@ -7,7 +7,7 @@ describe('pokeapi getPokemonIds', () => {
   describe('result', () => {
     let result: Result;
     beforeAll(async() => {
-      result = await getPokemonIdsQuery(2);
+      result = await getPokemonIdsQuery(11);
     })
 
     it('should not return errors', async () => {
