@@ -15,7 +15,7 @@ import dynamic from "next/dynamic";
 import { Skeleton } from "pages/routes/details";
 
 const DetailsRoute = dynamic(() => import("pages/routes/details"), {
-  suspense: true,
+  suspense: typeof window !== "undefined",
 });
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -40,7 +40,10 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 
-const Home: NextPage = ({
+const Home: NextPage<{
+  pokemons?: Pokemon[];
+  pokemonIdsNames?: { id: number; name: string }[];
+}> = ({
   pokemons,
   pokemonIdsNames,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
