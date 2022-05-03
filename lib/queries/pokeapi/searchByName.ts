@@ -2,8 +2,8 @@ import {ENDPOINT} from 'lib/queries/pokeapi';
 import fetchGQL from "lib/fetchGQL";
 
 const query =  `
-  query search_pokemon_by_name($nameLike: String) {
-    pokemons: pokemon_v2_pokemon(where: {name: {_ilike: $nameLike}}, order_by: {id: asc}) {
+  query search_pokemon_by_name($nameLike: String, $limit: Int) {
+    pokemons: pokemon_v2_pokemon(where: {name: {_ilike: $nameLike}}, order_by: {id: asc}, limit: $limit) {
       id
       name
     }
@@ -19,6 +19,9 @@ export type Result = {
   }
 }
 
-const searchByNameQuery = (name: string): Promise<Result> => fetchGQL(ENDPOINT, {query, variables: {nameLike: getNameLike(name)}, operationName: "search_pokemon_by_name"})
+const searchByNameQuery = (name: string, limit?:number): Promise<Result> => {
+  const nameLike = getNameLike(name);
+  return fetchGQL(ENDPOINT, {query, variables: limit ? {limit, nameLike} : {nameLike}, operationName: "search_pokemon_by_name"});
+}
 
 export default searchByNameQuery;

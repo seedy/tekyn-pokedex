@@ -1,4 +1,5 @@
 import {globalCss} from 'stitches.config';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -18,9 +19,9 @@ const globalStyle = globalCss({
 
 export const decorators = [
   (renderStory) => (
-    <>
+    <MemoryRouterProvider>
     {globalStyle()}
     {renderStory()}
-    </>
+    </MemoryRouterProvider>
   )
 ]
