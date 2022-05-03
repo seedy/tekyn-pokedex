@@ -7,15 +7,17 @@ describe('pokeapi getPokemonIds', () => {
   })
   describe('result', () => {
     let result: Result;
+    let mockData: Result
     beforeAll(async() => {
       result = await getPokemonIdsQuery(10);
+      mockData = mock['10'];
     })
 
     it('should not return errors', async () => {
       expect(result).not.toEqual(expect.objectContaining({errors: expect.any(Array)}))
     })
     it('should return pokemon ids', async () => {
-      expect(result).toEqual(expect.objectContaining(mock))
+      expect(result).toEqual(expect.objectContaining(mockData))
     })
   })
 })

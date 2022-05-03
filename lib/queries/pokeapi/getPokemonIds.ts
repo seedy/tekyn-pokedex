@@ -11,7 +11,7 @@ const query = `
 
 export type Result = {
   data: {
-    ids: {id: string}[]
+    ids: {id: number}[]
   }
 }
 const getPokemonIdsQuery = (limit?: number): Promise<Result> => fetchGQL(ENDPOINT, {query, variables: limit ? {limit} : {}, operationName: "get_pokemon_ids"})

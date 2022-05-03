@@ -1,5 +1,5 @@
 import details, { Result } from 'lib/queries/pokeapi/details';
-import detailsJson from 'lib/queries/pokeapi/details/details.json';
+import mock from 'mocks/data/details.json';
 
 describe('pokeapi details', () => {
   it('should not throw', async () => {
@@ -15,7 +15,7 @@ describe('pokeapi details', () => {
       expect(result).not.toEqual(expect.objectContaining({errors: expect.any(Array)}))
     })
     it('should return details in the expected format', async () => {
-      expect(result.data.pokemon).toEqual(detailsJson)
+      expect(result).toEqual(mock['1'])
     })
   })
 })

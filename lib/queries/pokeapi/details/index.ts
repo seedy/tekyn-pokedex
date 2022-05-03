@@ -3,7 +3,7 @@ import fetchGQL from "lib/fetchGQL";
 
 const query =  `
   query pokemon_details($id: Int) {
-    pokemon: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
+    pokemons: pokemon_v2_pokemon(where: {id: {_eq: $id}}) {
       id
       name
       evolutions: pokemon_v2_pokemonspecy {
@@ -42,7 +42,7 @@ const query =  `
 `
 export type Result = {
   data: {
-    pokemon: Pokemon
+    pokemons: Pokemon[]
   }
 }
 const details = async (id: string): Promise<Result> => fetchGQL(ENDPOINT, {query, variables: {id: Number(id)}, operationName: "pokemon_details"})
