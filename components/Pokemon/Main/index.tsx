@@ -29,10 +29,14 @@ const PokemonMain = ({
     [types]
   );
   const typeValues = useMemo(() => types.map(({ type }) => type.name), [types]);
+  const image = useMemo(
+    () => (id !== 6 ? `${id}.png` : `${id}-369w.png`),
+    [id]
+  );
   return (
     <Wrapper>
       <Image
-        src={id !== 6 ? `/pokemon/${id}.png` : `/pokemon/${id}-369w.png`}
+        src={unoptimized ? `./pokemon/${image}` : `/pokemon/${image}`}
         width={id !== 6 ? 284 : 369}
         height={284}
         alt={`${pokedexId} - ${name}`}

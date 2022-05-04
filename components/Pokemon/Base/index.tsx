@@ -51,7 +51,7 @@ const PokemonBase = ({
       <ImagesBlock>
         <AbsoluteWrapper front>
           <Image
-            src={`/pokemon/${id}.png`}
+            src={unoptimized ? `./pokemon/${id}.png` : `/pokemon/${id}.png`}
             width={id !== 6 ? 150 : 195}
             height={150}
             alt={`${pokedexId} - ${name}`}
