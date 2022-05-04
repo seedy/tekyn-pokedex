@@ -21,7 +21,7 @@ const Pokeball = ({ unoptimized, small }: PokeballProps) => {
   );
   return (
     <Image
-      src="/pokemon/pokeball.png"
+      src={unoptimized ? "./pokemon/pokeball.png" : "/pokemon/pokeball.png"}
       {...sizeProps}
       alt="pokeball"
       unoptimized={unoptimized}
