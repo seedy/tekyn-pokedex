@@ -11,7 +11,7 @@ const CardInfos = ({
   description,
 }: CardInfosProps) => {
   const abilitiesText = useMemo(
-    () => abilities.map(({ name }) => name).join(", "),
+    () => abilities.map(({ ability }) => ability.name).join(", "),
     [abilities]
   );
   const descriptionText = useMemo(

@@ -9,7 +9,10 @@ describe("CardInfos", () => {
     const INFOS = {
       weight: 90.5,
       height: 1.7,
-      abilities: [{ name: "blaze" }, { name: "solar-power" }],
+      abilities: [
+        { ability: { name: "blaze" } },
+        { ability: { name: "solar-power" } },
+      ],
       description: {
         flavorTexts: [
           {
