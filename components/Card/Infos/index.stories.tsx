@@ -16,7 +16,10 @@ export const Default = Template.bind({});
 Default.args = {
   weight: 90.5,
   height: 1.7,
-  abilities: [{ name: "blaze" }, { name: "solar-power" }],
+  abilities: [
+    { ability: { name: "blaze" } },
+    { ability: { name: "solar-power" } },
+  ],
   description: {
     flavorTexts: [
       {
@@ -31,7 +34,10 @@ export const Other = Template.bind({});
 Other.args = {
   weight: 32.4,
   height: 1,
-  abilities: [{ name: "insomnia" }, { name: "forewarn" }],
+  abilities: [
+    { ability: { name: "insomnia" } },
+    { ability: { name: "forewarn" } },
+  ],
   description: {
     flavorTexts: [
       {

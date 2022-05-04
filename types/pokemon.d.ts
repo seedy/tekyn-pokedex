@@ -1,5 +1,7 @@
 type Ability = {
-  name: string
+  ability: {
+    name: string
+  }
 }
 
 type Types = "normal"|
